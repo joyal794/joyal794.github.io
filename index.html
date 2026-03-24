@@ -143,7 +143,100 @@ footer span{color:var(--cyan)}
 .dpad-btn{width:50px;height:50px;background:#0D1F3C;border:1px solid rgba(0,220,245,0.35);color:var(--cyan);font-size:20px;cursor:pointer;border-radius:6px;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
 .dpad-btn:active{background:rgba(0,220,245,0.2)}
 .dpad-label{font-family:'Space Mono',monospace;font-size:9px;color:var(--gray);margin-top:4px;text-align:center;letter-spacing:1px}
-@media(max-width:900px){nav{padding:16px 24px}#hero,section{padding:80px 24px}.hero-photo-wrap{display:none}.about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}footer{flex-direction:column;gap:10px;text-align:center}}
+
+@media(max-width:900px){
+/* Nav */
+nav{padding:14px 20px;flex-wrap:wrap;gap:10px}
+.nav-logo{font-size:12px}
+.nav-links{gap:14px;flex-wrap:wrap}
+.nav-links a{font-size:11px}
+
+/* Hero */
+#hero{padding:100px 24px 60px;min-height:auto;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.hero-photo-wrap{
+display:flex!important;
+position:relative!important;
+right:auto!important;
+top:auto!important;
+transform:none!important;
+justify-content:center;
+margin-bottom:32px;
+order:-1;
+}
+.hero-photo-outer{width:180px!important;height:180px!important}
+.hero-photo-ring{width:210px!important;height:210px!important}
+.hero-content{max-width:100%;text-align:center}
+.hero-tag{justify-content:center}
+.hero-tag::before{display:none}
+.scroll-indicator{display:none}
+h1{font-size:clamp(32px,8vw,52px);letter-spacing:-1px}
+.hero-subtitle{font-size:15px;margin:20px 0 32px}
+.hero-tag{font-size:11px}
+.hero-btns{flex-direction:column;gap:12px}
+.btn-primary,.btn-secondary{text-align:center;padding:12px 24px}
+
+/* Sections */
+section{padding:60px 20px}
+#brainexe{padding:60px 20px}
+.section-title{font-size:clamp(22px,5vw,32px)}
+
+/* About */
+.about-grid{grid-template-columns:1fr;gap:36px}
+.about-tags{gap:8px}
+.tag{font-size:10px;padding:5px 10px}
+
+/* Experience */
+.exp-item{padding:0 0 40px 32px}
+.exp-role{font-size:17px}
+.exp-bullets li{font-size:13px}
+
+/* Projects */
+.projects-grid{grid-template-columns:1fr;gap:16px}
+.project-card{padding:24px}
+.project-title{font-size:17px}
+
+/* Skills */
+.skills-grid{grid-template-columns:1fr 1fr;gap:20px}
+.skill-name{font-size:12px}
+
+/* Education */
+.edu-grid{grid-template-columns:1fr;gap:16px}
+.edu-card{padding:24px}
+.edu-degree{font-size:15px}
+
+/* Contact */
+.contact-grid{grid-template-columns:1fr;gap:36px}
+.contact-info h3{font-size:22px}
+.contact-link{font-size:11px}
+
+/* Brain.exe */
+#brainexe > div:first-of-type{flex-direction:column}
+#brainexe > div:last-of-type > div:first-child{min-width:unset;width:100%}
+#brainexe canvas{max-width:100%!important}
+#brainexe > div[style*=“display:flex;gap:40px”]{flex-direction:column}
+
+/* Footer */
+footer{padding:20px;flex-direction:column;gap:8px;text-align:center}
+
+/* Scroll indicator */
+.scroll-indicator{display:none}
+}
+
+@media(max-width:480px){
+nav{padding:12px 16px}
+.nav-links{gap:10px}
+.nav-links a{font-size:10px;letter-spacing:0}
+section{padding:50px 16px}
+#brainexe{padding:50px 16px}
+.skills-grid{grid-template-columns:1fr}
+.about-grid{gap:28px}
+.contact-grid{gap:28px}
+h1{font-size:clamp(28px,9vw,42px)}
+.hero-subtitle{font-size:14px}
+.exp-item{padding:0 0 32px 24px}
+.project-card{padding:20px}
+.dpad-btn{width:44px;height:44px;font-size:16px}
+}
 
 /* Brain.exe dpad */
 .dpad{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:12px}
@@ -400,7 +493,7 @@ footer span{color:var(--cyan)}
     <h2 class="section-title">Brain.exe</h2>
     <div class="section-line"></div>
   </div>
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;gap:20px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;gap:20px;width:100%">
     <div>
       <p style="font-family:'Space Mono',monospace;font-size:13px;color:var(--cyan);letter-spacing:1px;margin-bottom:8px">// TAKE A BREAK</p>
       <p style="font-size:15px;color:var(--gray);max-width:500px;line-height:1.7;font-weight:300">You have been scrolling through my work. You deserve a break. Navigate the robot through the maze — just like I navigate through complex automation problems.</p>
@@ -416,14 +509,14 @@ footer span{color:var(--cyan)}
       </div>
     </div>
   </div>
-  <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap">
+  <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;width:100%">
     <div style="flex:1;min-width:280px">
       <div style="border:1px solid var(--border2);padding:3px;background:var(--bg3);display:inline-block">
         <canvas id="mazeCanvas" style="display:block;background:#060D1A"></canvas>
       </div>
       <div id="winMsg" style="display:none;margin-top:12px;padding:12px 20px;background:rgba(0,220,245,0.08);border:1px solid var(--border2);font-family:Space Mono,monospace;font-size:12px;color:var(--cyan);letter-spacing:1px"></div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:20px;min-width:200px">
+    <div style="display:flex;flex-direction:column;gap:20px;min-width:200px;flex:1">
       <div style="border:1px solid var(--border);padding:20px;background:var(--bg3)">
         <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--cyan);letter-spacing:2px;margin-bottom:12px">HOW TO PLAY</div>
         <div style="font-size:13px;color:var(--gray);line-height:1.8">
@@ -460,42 +553,6 @@ footer span{color:var(--cyan)}
   <div>&copy; 2026 <span>Joyal Nelson Chakkalakal</span> &mdash; Nuremberg, Germany</div>
   <div>Built with <span>&#9829;</span> &amp; Code</div>
 </footer>
-
-<!-- FLOATING GAME BUTTON -->
-
-<div id="gameBtn" onclick="openGame()">🤖</div>
-
-<!-- GAME POPUP -->
-
-<div id="gameOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:1000;align-items:center;justify-content:center">
-  <div class="game-box">
-    <div class="game-header">
-      <div>
-        <div class="game-title">ROBOT MAZE</div>
-        <div class="game-hint">WASD / Arrow Keys / D-Pad / Swipe</div>
-      </div>
-      <div style="display:flex;gap:20px;align-items:center">
-        <div class="game-stats">LVL <span id="gLevel">1</span> &nbsp; SCORE <span id="gScore">0</span></div>
-        <div class="game-close" onclick="closeGame()">&times;</div>
-      </div>
-    </div>
-    <canvas id="mazeCanvas"></canvas>
-    <div class="game-footer">
-      <div class="game-target-hint">Reach the <span style="color:var(--cyan)">&#9673;</span> target</div>
-      <button class="game-restart" onclick="restartGame()">RESTART</button>
-    </div>
-    <!-- D-Pad for mobile -->
-    <div class="dpad">
-      <div class="dpad-row"><button class="dpad-btn" onclick="tryMove(-1,0)">&#8593;</button></div>
-      <div class="dpad-row">
-        <button class="dpad-btn" onclick="tryMove(0,-1)">&#8592;</button>
-        <button class="dpad-btn" onclick="tryMove(1,0)">&#8595;</button>
-        <button class="dpad-btn" onclick="tryMove(0,1)">&#8594;</button>
-      </div>
-      <div class="dpad-label">TAP OR SWIPE TO MOVE</div>
-    </div>
-  </div>
-</div>
 
 <script>
 // ── Cursor ────────────────────────────────────────────────────────────────
@@ -572,136 +629,6 @@ window.addEventListener('load',function(){
   rloop();
 });
 
-// ── ROBOT MAZE GAME ───────────────────────────────────────────────────────
-var COLS=15,ROWS=13,CELL=30;
-var gCanvas,gCtx,maze,robot,target,gScore=0,gLevel=1,moves,gameWon,gParts=[],animId=null,gameOpen=false;
-var touchX,touchY;
-
-function openGame(){
-  document.getElementById('gameOverlay').style.display='flex';
-  gameOpen=true;
-  gScore=0;gLevel=1;
-  document.getElementById('gScore').textContent='0';
-  document.getElementById('gLevel').textContent='1';
-  initGame();
-}
-function closeGame(){
-  document.getElementById('gameOverlay').style.display='none';
-  gameOpen=false;
-  if(animId)cancelAnimationFrame(animId);
-}
-function restartGame(){
-  gScore=0;gLevel=1;
-  document.getElementById('gScore').textContent='0';
-  document.getElementById('gLevel').textContent='1';
-  initGame();
-}
-function initGame(){
-  gCanvas=document.getElementById('mazeCanvas');
-  var maxW=Math.min(450,window.innerWidth-60);
-  CELL=Math.floor(maxW/COLS);
-  gCanvas.width=COLS*CELL;gCanvas.height=ROWS*CELL;
-  gCtx=gCanvas.getContext('2d');
-  moves=0;gameWon=false;gParts=[];
-  genMaze();
-  gCanvas.ontouchstart=function(e){touchX=e.touches[0].clientX;touchY=e.touches[0].clientY;e.preventDefault();};
-  gCanvas.ontouchend=function(e){var dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;if(Math.abs(dx)>Math.abs(dy))tryMove(0,dx>0?1:-1);else tryMove(dy>0?1:-1,0);e.preventDefault();};
-  if(animId)cancelAnimationFrame(animId);
-  gLoop();
-}
-function genMaze(){
-  maze=[];
-  for(var r=0;r<ROWS;r++){maze[r]=[];for(var c=0;c<COLS;c++)maze[r][c]={t:true,r:true,b:true,l:true,v:false};}
-  carve(0,0);
-  robot={x:0,y:0,px:0,py:0,pt:1};
-  target={x:COLS-1,y:ROWS-1};
-}
-function carve(r,c){
-  maze[r][c].v=true;
-  var dirs=['t','r','b','l'].sort(function(){return Math.random()-.5;});
-  dirs.forEach(function(d){
-    var nr=r+(d==='b'?1:d==='t'?-1:0),nc=c+(d==='r'?1:d==='l'?-1:0);
-    var opp={t:'b',b:'t',l:'r',r:'l'};
-    if(nr>=0&&nr<ROWS&&nc>=0&&nc<COLS&&!maze[nr][nc].v){maze[r][c][d]=false;maze[nr][nc][opp[d]]=false;carve(nr,nc);}
-  });
-}
-function tryMove(dr,dc){
-  if(gameWon)return;
-  var r=robot.y,c=robot.x;
-  var dir=dr===-1?'t':dr===1?'b':dc===-1?'l':'r';
-  if(!maze[r][c][dir]){
-    robot.px=robot.x;robot.py=robot.y;robot.x+=dc;robot.y+=dr;robot.pt=0;moves++;
-    for(var i=0;i<5;i++)gParts.push({x:(robot.px+.5)*CELL,y:(robot.py+.5)*CELL,vx:(Math.random()-.5)*3,vy:(Math.random()-.5)*3,life:1});
-    if(robot.x===target.x&&robot.y===target.y){
-      gameWon=true;
-      var pts=Math.max(10,100-moves+gLevel*20);
-      gScore+=pts;gLevel++;
-      document.getElementById('gScore').textContent=gScore;
-      document.getElementById('gLevel').textContent=gLevel;
-      for(var i=0;i<30;i++)gParts.push({x:(target.x+.5)*CELL,y:(target.y+.5)*CELL,vx:(Math.random()-.5)*6,vy:(Math.random()-.5)*6,life:1,w:true});
-      setTimeout(initGame,1800);
-    }
-  }
-}
-document.addEventListener('keydown',function(e){
-  if(!gameOpen)return;
-  var m={ArrowUp:[-1,0],ArrowDown:[1,0],ArrowLeft:[0,-1],ArrowRight:[0,1],w:[-1,0],s:[1,0],a:[0,-1],d:[0,1],W:[-1,0],S:[1,0],A:[0,-1],D:[0,1]};
-  if(m[e.key]){e.preventDefault();tryMove(m[e.key][0],m[e.key][1]);}
-});
-function lerp(a,b,t){return a+(b-a)*t;}
-function ease(t){return t<.5?2*t*t:(4-2*t)*t-1;}
-function gLoop(){
-  if(!gameOpen)return;
-  robot.pt=Math.min(1,robot.pt+0.18);
-  gDraw();
-  animId=requestAnimationFrame(gLoop);
-}
-function gDraw(){
-  var W=gCanvas.width,H=gCanvas.height;
-  gCtx.fillStyle='#060D1A';gCtx.fillRect(0,0,W,H);
-  for(var r=0;r<ROWS;r++)for(var c=0;c<COLS;c++)if((r+c)%2===0){gCtx.fillStyle='rgba(0,220,245,0.02)';gCtx.fillRect(c*CELL,r*CELL,CELL,CELL);}
-  // Target
-  var tp=0.35+0.25*Math.sin(Date.now()/400);
-  gCtx.beginPath();gCtx.arc((target.x+.5)*CELL,(target.y+.5)*CELL,CELL*.5,0,Math.PI*2);gCtx.fillStyle='rgba(0,220,245,'+tp+')';gCtx.fill();
-  gCtx.beginPath();gCtx.arc((target.x+.5)*CELL,(target.y+.5)*CELL,CELL*.25,0,Math.PI*2);gCtx.fillStyle='#060D1A';gCtx.fill();gCtx.strokeStyle='#00DCF5';gCtx.lineWidth=2;gCtx.stroke();
-  gCtx.beginPath();gCtx.arc((target.x+.5)*CELL,(target.y+.5)*CELL,CELL*.1,0,Math.PI*2);gCtx.fillStyle='#00DCF5';gCtx.fill();
-  // Walls
-  gCtx.strokeStyle='rgba(0,220,245,0.55)';gCtx.lineWidth=1.5;
-  for(var r=0;r<ROWS;r++){for(var c=0;c<COLS;c++){var x=c*CELL,y=r*CELL;
-    if(maze[r][c].t){gCtx.beginPath();gCtx.moveTo(x,y);gCtx.lineTo(x+CELL,y);gCtx.stroke();}
-    if(maze[r][c].l){gCtx.beginPath();gCtx.moveTo(x,y);gCtx.lineTo(x,y+CELL);gCtx.stroke();}
-    if(r===ROWS-1&&maze[r][c].b){gCtx.beginPath();gCtx.moveTo(x,y+CELL);gCtx.lineTo(x+CELL,y+CELL);gCtx.stroke();}
-    if(c===COLS-1&&maze[r][c].r){gCtx.beginPath();gCtx.moveTo(x+CELL,y);gCtx.lineTo(x+CELL,y+CELL);gCtx.stroke();}
-  }}
-  // Particles
-  gParts=gParts.filter(function(p){return p.life>0;});
-  gParts.forEach(function(p){
-    gCtx.beginPath();gCtx.arc(p.x,p.y,3*p.life,0,Math.PI*2);
-    gCtx.fillStyle=p.w?'#ffffff':'#00DCF5';gCtx.globalAlpha=p.life;gCtx.fill();gCtx.globalAlpha=1;
-    p.x+=p.vx;p.y+=p.vy;p.life-=0.05;
-  });
-  // Robot
-  var t=ease(robot.pt);
-  var rx=lerp(robot.px,robot.x,t),ry=lerp(robot.py,robot.y,t);
-  var cx=(rx+.5)*CELL,cy=(ry+.5)*CELL,s=CELL*.3;
-  gCtx.beginPath();gCtx.arc(cx,cy,CELL*.42,0,Math.PI*2);gCtx.fillStyle='rgba(0,220,245,0.1)';gCtx.fill();
-  gCtx.fillStyle='#0A1628';gCtx.strokeStyle='#00DCF5';gCtx.lineWidth=1.5;
-  gCtx.beginPath();gCtx.rect(cx-s,cy-s,s*2,s*2);gCtx.fill();gCtx.stroke();
-  gCtx.fillStyle='#0D1F3C';gCtx.strokeStyle='#00DCF5';gCtx.lineWidth=1;
-  gCtx.beginPath();gCtx.rect(cx-s*.55,cy-s*1.45,s*1.1,s*.75);gCtx.fill();gCtx.stroke();
-  gCtx.fillStyle='#00DCF5';
-  gCtx.beginPath();gCtx.arc(cx-s*.22,cy-s*1.15,2.2,0,Math.PI*2);gCtx.fill();
-  gCtx.beginPath();gCtx.arc(cx+s*.22,cy-s*1.15,2.2,0,Math.PI*2);gCtx.fill();
-  gCtx.strokeStyle='#00DCF5';gCtx.lineWidth=1;
-  gCtx.beginPath();gCtx.moveTo(cx,cy-s*1.45);gCtx.lineTo(cx,cy-s*1.85);gCtx.stroke();
-  gCtx.beginPath();gCtx.arc(cx,cy-s*1.85,2.2,0,Math.PI*2);gCtx.fillStyle='#00DCF5';gCtx.fill();
-  // Win msg
-  if(gameWon){
-    gCtx.fillStyle='rgba(6,13,26,0.75)';gCtx.fillRect(0,H/2-28,W,56);
-    gCtx.fillStyle='#00DCF5';gCtx.font='bold 16px "Space Mono",monospace';gCtx.textAlign='center';
-    gCtx.fillText('LEVEL COMPLETE! +'+(Math.max(10,100-moves+(gLevel-1)*20)),W/2,H/2+6);gCtx.textAlign='left';
-  }
-}
 </script>
 
 <script>
